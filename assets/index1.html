@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CANTEEN WEBSITE</title>
+    <!-- Icons and CSS files -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="body-fixed">
+    <!-- Header with Cart Notification -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="index.html"><img src="assets/images/smsklogo.jpg" alt="logo" width="200" height="170"></a>
+            </div>
+            <nav class="header-menu">
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                    <li><a href="#payment">Payment</a></li>
+                </ul>
+                <a href="#cart" class="header-btn header-cart">
+                    <i class="uil uil-shopping-cart"></i>
+                    <span class="cart-number" id="cart-count">0</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section id="home" class="main-banner">
+        <div class="container">
+            <h1>Welcome to SMSK Canteen</h1>
+            <p>Order and enjoy delicious food!</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-sec section">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>A variety of south Indian food and snacks are provided to students and staff. Enjoy our hygienic, fresh meals!</p>
+        </div>
+    </section>
+
+    <!-- Menu Section: Display Dishes -->
+    <section id="menu" class="section bg-light">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-items">
+                <!-- Sample Menu Item: Copy structure for each menu item you want to display -->
+                <div class="menu-item">
+                    <img src="assets/images/dish1.png" alt="Dish Image">
+                    <h3>Fresh Chicken Veggies</h3>
+                    <p>Rs.199</p>
+                    <button onclick="addToCart('Fresh Chicken Veggies', 199)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="assets/images/dish2.png" alt="Dish Image">
+                    <h3>Grilled Chicken</h3>
+                    <p>Rs.99</p>
+                    <button onclick="addToCart('Grilled Chicken', 99)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <img src="assets/images/dish3.png" alt="Dish Image">
+                    <h3>Paneer Noodles</h3>
+                    <p>Rs.179</p>
+                    <button onclick="addToCart('Paneer Noodles', 179)">Add to Cart</button>
+                </div>
+                <!-- Repeat menu items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section: Display Selected Items -->
+    <section id="cart" class="section bg-light">
+        <div class="container">
+            <h2>Shopping Cart</h2>
+            <ul id="cart-items" class="list-unstyled">
+                <!-- JavaScript dynamically adds items here -->
+            </ul>
+            <div class="text-center mt-4">
+                <strong>Total: Rs.<span id="cart-total">0</span></strong>
+            </div>
+            <div class="text-center mt-4">
+                <button class="sec-btn primary-btn" onclick="proceedToPayment()">Proceed to Payment</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section: Payment Form -->
+    <section id="payment" class="section bg-light">
+        <div class="container">
+            <h2>Payment Information</h2>
+            <form id="payment-form" onsubmit="processPayment(event)">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" required>
+                
+                <label for="expiration-date">Expiration Date:</label>
+                <input type="text" id="expiration-date" required>
+                
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" required>
+                
+                <button type="submit" class="sec-btn primary-btn">Pay Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2023 SMSK Canteen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Integration for Cart and Payment Functionality -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script> <!-- Custom JavaScript for cart and payment -->
+
+</body>
+
+</html>
